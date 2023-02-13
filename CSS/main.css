@@ -57,156 +57,81 @@ table {
   box-sizing: border-box;
 }
 
-html,
+html {
+  width: 100%;
+  height: 100%;
+}
+
 body {
   width: 100%;
   height: 100%;
-  font-family: "Noto Sans KR", sans-serif;
 }
 
 #index {
   width: 100%;
   height: 100%;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 aside {
-  display: flex;
   width: -moz-min-content;
   width: min-content;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+aside nav {
+  display: flex;
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem;
-  background: #f1f2f6;
-  border-right: 1px solid rgba(112, 112, 112, 0.1);
-  color: rgba(33, 33, 33, 0.75);
-  position: relative;
 }
-aside nav {
+aside nav .menu {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-aside nav .item {
-  display: flex;
+aside nav .menu .list {
   width: 3.5rem;
   height: 3.5rem;
-  justify-content: center;
+  background: lightcoral;
   cursor: pointer;
-  border-radius: 0.5rem;
-  font-size: 0.75rem;
-  padding: 0.25rem;
 }
-aside nav .item:hover {
-  transform: scale(0.99) translate(2px, 2px);
-  box-shadow: none;
-}
-aside nav .item .icon {
-  display: flex;
-  width: 1.5rem;
-  flex-direction: column-reverse;
-  align-items: center;
-}
-aside .mode {
+aside nav .mode {
   width: 3.5rem;
   height: 3.5rem;
-  cursor: pointer;
-  border-radius: 50%;
-  position: relative;
+  transition: transform 0.2s;
   transform-style: preserve-3d;
-  perspective: 300px;
-  transition: transform 0.3s;
+  position: relative;
+  cursor: pointer;
 }
-aside .mode::before {
-  content: "\f1d2";
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  border-radius: inherit;
-  font-family: bootstrap-icons;
+aside nav .mode .front {
   position: absolute;
-  z-index: 1;
+  width: 3.5rem;
+  height: 3.5rem;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+  transition: transform 0.4s;
+  background: lightpink;
   transform: rotateY(0deg);
-  font-size: 1.5rem;
+  z-index: 5;
 }
-aside .mode:hover::before {
-  color: #d50000;
-  background: rgba(0, 0, 0, 0.05);
-  transition: all 0.2s;
-}
-aside .mode::after {
-  content: "\f497";
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  border-radius: inherit;
-  font-family: bootstrap-icons;
-  position: absolute;
-  z-index: 0;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  transform: rotateY(-180deg);
-  font-size: 1.25rem;
-}
-aside .mode:hover::after {
-  color: #ffd600;
-  background: rgba(0, 0, 0, 0.1);
-}
-
-.active {
+aside nav .mode:hover .front {
   transform: rotateY(180deg);
 }
-
-.border-light {
-  border: 1px solid rgba(255, 255, 255, 0.35);
-}
-
-.border-dark {
-  border: 1px solid rgba(50, 50, 50, 0.3);
-}
-
-.dark-mode {
-  background: #212121;
-}
-
-.light-dark-mode {
-  background: #424242;
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-.light-item {
-  background: rgba(250, 250, 250, 0.75);
-  box-shadow: 2px 2px 0px 1px rgba(50, 50, 50, 0.45);
-  border: 1px solid rgba(50, 50, 50, 0.35);
-}
-
-.dark-item {
-  background: #6d6d6d;
-  box-shadow: 2px 2px 0px 1px #323232;
-  border: 1px solid rgba(50, 50, 50, 0.9);
-}
-
-.library {
+aside nav .mode .back {
   position: absolute;
-  width: 13.75rem;
-  height: 100%;
-  top: 0px;
-  left: calc(100% + 1px);
-  border-radius: 0px 0.75rem 0.75rem 0px;
+  width: 3.5rem;
+  height: 3.5rem;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transition: transform 0.4s;
+  background: lightblue;
+  transform: rotateY(-180deg);
+  z-index: 0;
 }
-
-.light-library {
-  background: #f1f2f6;
-  box-shadow: 1px 1px 3px 0px rgba(50, 50, 50, 0.35);
-}
-
-.dark-library {
-  background: #424242;
+aside nav .mode:hover .back {
+  transform: rotateY(0deg);
 }/*# sourceMappingURL=main.css.map */

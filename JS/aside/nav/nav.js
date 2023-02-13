@@ -1,11 +1,13 @@
 'use strict';
 
-import Item from "./item/item.js";
+import Menu from "./menu/menu.js";
+import Mode from "./mode/mode.js";
 
 export default class Nav {
     constructor(generator, data) {
         const nav = new generator(data[2], data[1].name);
 
-        const item = new Item(generator, data);
+        const menu = new Menu(generator, data);
+        const mode = new Mode(generator, data);
     }
 }

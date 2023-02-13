@@ -1,0 +1,17 @@
+@mixin full-size {
+    width: 100%;
+    height: 100%;
+}
+
+@mixin item-size {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+@mixin flip {
+    position: absolute;
+    width: 3.5rem;
+    height: 3.5rem;
+    backface-visibility: hidden;
+    transition: transform .4s;
+}
