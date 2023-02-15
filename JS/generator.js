@@ -8,12 +8,9 @@ export default class Generator {
         for(let i = 0; i < this.data.number; i++) {
             this.create();
             this.attrs();
-            this.text();
-            this.add();
             this.array();
+            this.add(i);
         }
-
-        console.log(this.data.array)
     }
 
     create() {
@@ -26,17 +23,25 @@ export default class Generator {
         }
     }
 
-    text() {
-        for(let i = 0; i < this.data.text.length; i++) {
-            this.data.name.innerHTML = this.data.text[i];
-        }
-    }
-
-    add() {
-        this.parent.append(this.data.name);
-    }
-
     array() {
         this.data.array.push(this.data.name);
+    }
+
+    add(i) {
+        this.i = i;
+
+        if(Array.isArray(this.parent)) {
+            this.parent[this.i].append(this.data.name);
+
+            this.data.name.innerHTML = this.data.text[this.i];
+        }else {
+            this.parent.append(this.data.name);
+            
+            this.data.name.innerHTML = this.data.text[this.i];
+        }
+
+        if(this.data.name.innerHTML == 'undefined') {
+            this.data.name.innerHTML = '';
+        }
     }
 }
