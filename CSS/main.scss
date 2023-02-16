@@ -18,7 +18,7 @@ body {
 #index {
     @include full-size();
     font-family: 'Noto Sans KR', sans-serif;
-    color: #1D1E23;
+    color: rgba(0, 0, 0, .75);
 }
 
 aside {
@@ -27,7 +27,7 @@ aside {
     position: fixed;
     top: 0;
     left: 0;
-    background: #f1f1f1;
+    background: #efefef;
     
     nav {
         display: flex;
@@ -75,7 +75,7 @@ aside {
             .em {
                 width: .35rem;
                 height: 100%;
-                background: palevioletred;
+                background: steelblue;
                 border-radius: 0 .7rem .7rem 0;
                 position: absolute;
                 left: 0;
@@ -85,6 +85,10 @@ aside {
 
             .show-em {
                 opacity: 1;
+            }
+
+            .dark-em {
+                background: lightcoral;
             }
         }
 
@@ -101,8 +105,8 @@ aside {
                 @include flip();
                 transform: rotateY(0deg);
                 z-index: 5;
-                border-color: #bdbdbd;
-                color:orange;
+                border-color: #babdbe;
+                color: orange;
                 font-size: 1.25rem;
             }
 
@@ -114,8 +118,8 @@ aside {
                 @include flip();
                 transform: rotateY(-180deg);
                 z-index: 0;
-                border-color: #696969;
-                color:chocolate;
+                border-color: #5a5a5a;
+                color: chocolate;
                 font-size: 1.25rem;
             }
 

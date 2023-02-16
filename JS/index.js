@@ -1,9 +1,9 @@
 'use strict';
 
-import Generator from "./generator.js";
+import Generator from "./setting/generator.js";
 const generator = Generator;
 
-import { Data } from "./data.js";
+import { Data } from "./setting/data.js";
 const data = Data;
 
 import Aside from "./aside/aside.js";

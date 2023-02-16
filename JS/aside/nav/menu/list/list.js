@@ -1,71 +1,60 @@
-'use strict';
+"use strict";
 
 import Item from "./item/item.js";
 import Em from "./em/em.js";
 
 export default class List {
-    constructor(generator, data) {
-        const list = new generator(data[5], data[3].name);
+  constructor(generator, data, storage_data) {
+    const list = new generator(data[5], data[3].name);
 
-        const item = new Item(generator, data);
-        const em = new Em(generator, data);
+    const item = new Item(generator, data);
+    const em = new Em(generator, data);
 
-        const name = 'Index';
-        let value;
+    const _index = JSON.parse(localStorage.getItem(storage_data[1].name));
+    const _dark_mode = JSON.parse(localStorage.getItem(storage_data[0].name));
 
-        if(localStorage.getItem(name) == null) {
-            value = [0];
-        }else {
-            value = JSON.parse(localStorage.getItem(name));
-        }
+    data[5].array.forEach((element, index, array) => {
+      element.addEventListener("mouseenter", (e) => {
+        const target = e.target;
 
-        const dark = JSON.parse(localStorage.getItem('Dark-Mode'))[0];
+        target.classList.add("hovered");
+      });
 
-        data[5].array.forEach((element, index, array) => {
-            element.addEventListener('mouseenter', e => {
-                const target = e.target;
+      element.addEventListener("mouseleave", (e) => {
+        const target = e.target;
 
-                target.classList.add('hovered');
-            });
+        target.classList.remove("hovered");
+      });
 
-            element.addEventListener('mouseleave', e => {
-                const target = e.target;
+      element.addEventListener("click", (e) => {
+        const target = e.target;
+        
+        const target_index = array.indexOf(target);
 
-                target.classList.remove('hovered');
-            });
+        _index.shift();
+        _index.push(target_index);
 
-            element.addEventListener('click', e => {
-                const target = e.target;
-
-                const index = array.indexOf(target);
-
-                value.shift();
-                value.push(index);
-
-                data[9].array.forEach(element => {
-                    this.remove(element, 'show-em');
-                });
-                this.add(data[9].array[index], 'show-em');
-
-                localStorage.setItem(name, JSON.stringify(value));
-            });
+        data[9].array.forEach((element) => {
+          this.remove(element, "show-em");
         });
+        this.add(data[9].array[target_index], "show-em");
 
-        localStorage.setItem(name, JSON.stringify(value));
+        localStorage.setItem(storage_data[1].name, JSON.stringify(_index));
+      });
+    });
 
-        const index = JSON.parse(localStorage.getItem(name))[0];
-        this.maintains(data, index);
-    }
+    this.maintains(data, _index[0], _dark_mode[0]);
+  }
 
-    add(data, value) {
-        data.classList.add(value);
-    }
+  add(data, value) {
+    data.classList.add(value);
+  }
 
-    remove(data, value) {
-        data.classList.remove(value);
-    }
+  remove(data, value) {
+    data.classList.remove(value);
+  }
 
-    maintains(data, index) {
-        this.add(data[9].array[index], 'show-em');
-    }
+  maintains(data, _index, _dark_mode) {
+    this.add(data[9].array[_index], "show-em");
+  }
 }
