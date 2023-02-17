@@ -98,4 +98,34 @@ export const Data = [
         number: 4,
         array: [],
     },
+
+    { // library 10
+        name: 'library',
+        element: 'div',
+        type: ['class'],
+        value: ['library'],
+        text: [],
+        number: 1,
+        array: [],
+    },
+
+    { // bookcase 11
+        name: 'bookcase',
+        element: 'ul',
+        type: ['class'],
+        value: ['bookcase'],
+        text: [],
+        number: 1,
+        array: [],
+    },
+
+    { // book 12
+        name: 'book',
+        element: 'li',
+        type: ['class'],
+        value: ['book'],
+        text: ['Menu1', 'Menu2', 'Menu3'],
+        number: 3,
+        array: [],
+    },
 ];

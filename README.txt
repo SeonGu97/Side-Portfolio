@@ -56,3 +56,14 @@ em기능은 리스트를 눌렀을때 내가 누를 리스트에 강조 효과�
 스토리지 데이터가 들어가는 js파일과 그 데이터로 스토리지를 생성해주는 함수를 만들었다.
 데이터를 사용하는데 있어서 더 편리해졌고, 생성하는 과정도 깔끔해졌다.
 
+(23.02.16 ~ 18)
+- _class, library, bookcase, book, fix
+
+- 오늘은 aside 디자인을 모두 마쳤다.
+일단 추가된 기능은 class.js를 만들어서 classList 옵션을 다 넣고 사용 할 수 있게 만들었다.
+또 library를 만들어서 특정 nav item을 hover나 click했을때 transform 되도록 만들었다.
+library 에는 간단하게 book메뉴 아이템들이 들어있다. 물론 이 모든 것들을 dark모드도 적용했다.
+그리고 library를 mouseenter를 했을때 library에 연한 box-shadow가 생기도록 만들었고, mouseleave가 되면 사라진다.
+이렇게 aside 디자인을 마쳤고, 이제 실제 작동할 링크를 넣으면 된다.
+내일은 이제 메인 콘텐츠를 만들어야겠다.
+

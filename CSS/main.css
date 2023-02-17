@@ -71,24 +71,26 @@ body {
   width: 100%;
   height: 100%;
   font-family: "Noto Sans KR", sans-serif;
-  color: rgba(0, 0, 0, 0.75);
+  color: rgba(0, 0, 0, 0.65);
+  font-weight: bold;
 }
 
 aside {
   width: -moz-min-content;
   width: min-content;
   height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: #efefef;
+  position: relative;
 }
 aside nav {
   display: flex;
-  height: calc(100% - 1rem);
+  width: 5rem;
+  height: 100%;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 1rem;
+  padding-top: 1rem;
+  background: #efefef;
+  position: relative;
+  z-index: 5;
 }
 aside nav .menu {
   display: flex;
@@ -96,13 +98,13 @@ aside nav .menu {
 }
 aside nav .menu .list {
   display: flex;
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 3rem;
+  height: 3rem;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   cursor: pointer;
-  padding: 0 1rem;
+  padding: 0.25rem 1rem;
   margin: 1rem 0;
   box-sizing: content-box;
   position: relative;
@@ -114,14 +116,14 @@ aside nav .menu .list i {
 aside nav .menu .list .item {
   height: -moz-min-content;
   height: min-content;
-  font-size: 0.75rem;
+  font-size: 0.5rem;
   pointer-events: none;
+}
+aside nav .menu .list:hover {
+  background: rgba(150, 150, 150, 0.2);
 }
 aside nav .menu .dark-list {
   color: #e6e6e6;
-}
-aside nav .menu .hovered {
-  background: rgba(150, 150, 150, 0.2);
 }
 aside nav .menu .em {
   width: 0.35rem;
@@ -140,8 +142,8 @@ aside nav .menu .dark-em {
   background: lightcoral;
 }
 aside nav .mode {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 3rem;
+  height: 3rem;
   transition: transform 0.2s;
   transform-style: preserve-3d;
   position: relative;
@@ -154,8 +156,8 @@ aside nav .mode .front {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 100%;
+  height: 3rem;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   transition: transform 0.4s;
@@ -177,8 +179,8 @@ aside nav .mode .back {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 100%;
+  height: 3rem;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   transition: transform 0.4s;
@@ -188,7 +190,7 @@ aside nav .mode .back {
   border-style: solid;
   transform: rotateY(-180deg);
   z-index: 0;
-  border-color: #5a5a5a;
+  border-color: #5c5c5c;
   color: chocolate;
   font-size: 1.25rem;
 }
@@ -200,6 +202,62 @@ aside nav .mode .b-active {
   background: #1c1c1c;
 }
 
-.dark-aside {
+.dark-nav {
   background: #363636;
+}
+
+.library {
+  width: 12.5rem;
+  height: 100%;
+  background: #efefef;
+  border-left: 1px solid rgba(189, 189, 189, 0.5);
+  border-radius: 0 1rem 1rem 0;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  transition-delay: 0.2s;
+  padding: 1rem 0.5rem;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+}
+.library .bookcase {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.library .bookcase .book {
+  display: flex;
+  width: 100%;
+  height: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2.5rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+.library .bookcase .book:hover {
+  background: rgba(150, 150, 150, 0.2);
+}
+
+.show {
+  transform: translateX(5rem);
+}
+
+.fix {
+  transform: translateX(5rem);
+}
+
+.dark-library {
+  background: #363636;
+  border-color: #494949;
+  color: #e0e0e0;
+}
+
+.paint {
+  background: rgba(150, 150, 150, 0.075);
+}
+
+.library-shadow {
+  box-shadow: 1px 0px 2px 1px rgba(50, 50, 50, 0.2);
+  transition: box-shadow 0.2s ease;
 }/*# sourceMappingURL=main.css.map */
