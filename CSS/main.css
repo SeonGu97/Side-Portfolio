@@ -123,7 +123,7 @@ aside nav .menu .list:hover {
   background: rgba(150, 150, 150, 0.2);
 }
 aside nav .menu .dark-list {
-  color: #e6e6e6;
+  color: #eceff1;
 }
 aside nav .menu .em {
   width: 0.35rem;
@@ -250,7 +250,7 @@ aside nav .mode .b-active {
 .dark-library {
   background: #363636;
   border-color: #494949;
-  color: #e0e0e0;
+  color: #eceff1;
 }
 
 .paint {
