@@ -1,200 +1,216 @@
 @import "reset";
 @import "_mixin";
 @import "_variable";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    @include full-size();
+  @include full-size();
 }
 
 body {
-    @include full-size();
+  @include full-size();
 }
 
 #index {
-    @include full-size();
-    font-family: 'Noto Sans KR', sans-serif;
-    color: rgba(0, 0, 0, .75);
-    font-weight: bold;
+  display: flex;
+  @include full-size();
+  font-family: "Noto Sans KR", sans-serif;
+  color: rgba(0, 0, 0, 0.75);
+  font-weight: bold;
 }
 
 aside {
-    width: min-content;
+  width: min-content;
+  height: 100%;
+  position: relative;
+
+  nav {
+    display: flex;
+    width: 5rem;
     height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 1rem;
+    background: #efefef;
     position: relative;
-    
-    nav {
+    z-index: 5;
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+
+      .list {
         display: flex;
-        width: 5rem;
-        height: 100%;
+        @include item-size();
         flex-direction: column;
-        justify-content: space-between;
-        padding-top: 1rem;
-        background: #efefef;
+        justify-content: space-around;
+        align-items: center;
+        cursor: pointer;
+        padding: 0.25rem 1rem;
+        margin: 1rem 0;
+        box-sizing: content-box;
         position: relative;
-        z-index: 5;
 
-        .menu {
-            display: flex;
-            flex-direction: column;
-            
-            .list {
-                display: flex;
-                @include item-size();
-                flex-direction: column;
-                justify-content: space-around;
-                align-items: center;
-                cursor: pointer;
-                padding: .25rem 1rem;
-                margin: 1rem 0;
-                box-sizing: content-box;
-                position: relative;
-
-                i {
-                    font-size: 1.25rem;
-                    pointer-events: none;
-                }
-
-                .item {
-                    height: min-content;
-                    font-size: .5rem;
-                    pointer-events: none;
-                }
-
-                &:hover {
-                    background: rgba(150, 150, 150, 0.2);
-                }
-            }
-
-            .dark-list {
-                color: #eceff1;
-            }
-
-            .em {
-                width: .35rem;
-                height: 100%;
-                background: steelblue;
-                border-radius: 0 .7rem .7rem 0;
-                position: absolute;
-                left: 0;
-                opacity: 0;
-                pointer-events: none;
-            }
-
-            .show-em {
-                opacity: 1;
-            }
-
-            .dark-em {
-                background: lightcoral;
-            }
+        i {
+          font-size: 1.25rem;
+          pointer-events: none;
         }
 
-        .mode {
-            @include item-size();
-            transition: transform .2s;
-            transform-style: preserve-3d;
-            position: relative;
-            cursor: pointer;
-            margin: 1rem;
-            box-sizing: content-box;
-
-            .front {
-                @include flip();
-                transform: rotateY(0deg);
-                z-index: 5;
-                border-color: #babdbe;
-                color: orange;
-                font-size: 1.25rem;
-            }
-
-            .f-active {
-                transform: rotateY(180deg);
-            }
-
-            .back {
-                @include flip();
-                transform: rotateY(-180deg);
-                z-index: 0;
-                border-color: #5c5c5c;
-                color: chocolate;
-                font-size: 1.25rem;
-            }
-
-            .b-active{
-                transform: rotateY(0deg);
-            }
+        .item {
+          height: min-content;
+          font-size: 0.5rem;
+          pointer-events: none;
         }
+
+        &:hover {
+          background: rgba(150, 150, 150, 0.2);
+        }
+      }
+
+      .dark-list {
+        color: #eceff1;
+      }
+
+      .em {
+        width: 0.35rem;
+        height: 100%;
+        background: steelblue;
+        border-radius: 0 0.7rem 0.7rem 0;
+        position: absolute;
+        left: 0;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .show-em {
+        opacity: 1;
+      }
+
+      .dark-em {
+        background: lightcoral;
+      }
     }
+
+    .mode {
+      @include item-size();
+      transition: transform 0.2s;
+      transform-style: preserve-3d;
+      position: relative;
+      cursor: pointer;
+      margin: 1rem;
+      box-sizing: content-box;
+
+      .front {
+        @include flip();
+        transform: rotateY(0deg);
+        z-index: 5;
+        border-color: #babdbe;
+        color: orange;
+        font-size: 1.25rem;
+      }
+
+      .f-active {
+        transform: rotateY(180deg);
+      }
+
+      .back {
+        @include flip();
+        transform: rotateY(-180deg);
+        z-index: 0;
+        border-color: #5c5c5c;
+        color: chocolate;
+        font-size: 1.25rem;
+      }
+
+      .b-active {
+        transform: rotateY(0deg);
+      }
+    }
+  }
 }
 
 .dark-mode {
-    background: #1c1c1c;
+  background: #1c1c1c;
 }
 
 .dark-nav {
-    background: #363636;
+  background: #363636;
 }
 
 .library {
-    width: 12.5rem;
-    height: 100%;
-    background: #efefef;
-    border-left: 1px solid rgba($color: #bdbdbd, $alpha: .5);
-    border-radius: 0 1rem 1rem 0;
-    transform: translateX(-100%);
-    transition: transform .4s ease;
-    transition-delay: .2s;
-    padding: 1rem .5rem;
-    position: absolute;
-    top: 0;
-    z-index: 0;
+  width: 12.5rem;
+  height: 100%;
+  background: #efefef;
+  border-left: 1px solid rgba($color: #bdbdbd, $alpha: 0.5);
+  border-radius: 0 1rem 1rem 0;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  transition-delay: 0.2s;
+  padding: 1rem 0.5rem;
+  position: absolute;
+  top: 0;
+  z-index: 0;
 
-    .bookcase {
-        display: flex;
-        flex-direction: column;
-        gap: .25rem;
+  .bookcase {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
 
-        .book {
-            display: flex;
-            width: 100%;
-            height: 2.5rem;
-            justify-content: center;
-            align-items: center;
-            border-radius: 2.5rem;
-            font-size: .75rem;
-            cursor: pointer;
+    .book {
+      display: flex;
+      width: 100%;
+      height: 2.5rem;
+      justify-content: center;
+      align-items: center;
+      border-radius: 2.5rem;
+      font-size: 0.75rem;
+      cursor: pointer;
 
-            &:hover {
-                background: rgba(150, 150, 150, 0.2);
-            }
-        }
+      &:hover {
+        background: rgba(150, 150, 150, 0.2);
+      }
     }
+  }
 }
 
 .show {
-    transform: translateX(5rem);
+  transform: translateX(5rem);
 }
 
 .fix {
-    transform: translateX(5rem);
+  transform: translateX(5rem);
 }
 
 .dark-library {
-    background: #363636;
-    border-color: #494949;
-    color: #eceff1;
+  background: #363636;
+  border-color: #494949;
+  color: #eceff1;
 }
 
 .paint {
-    background: rgba(150, 150, 150, 0.075);
+  background: rgba(150, 150, 150, 0.075);
 }
 
 .library-shadow {
-    box-shadow: 1px 0px 2px 1px rgba($color: #323232, $alpha: .2);
-    transition: box-shadow .2s ease;
+  box-shadow: 1px 0px 2px 1px rgba($color: #323232, $alpha: 0.2);
+  transition: box-shadow 0.2s ease;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  transition: padding-left 0.4s ease;
+
+  .container {
+    display: none;
+    @include full-size();
+  }
+}
+
+.main-move {
+  padding-left: 12.5rem;
 }

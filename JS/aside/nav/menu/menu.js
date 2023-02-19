@@ -1,11 +1,11 @@
-'use strict';
+"use strict";
 
 import List from "./list/list.js";
 
 export default class Menu {
-    constructor(generator, data, storage_data, _class) {
-        const menu = new generator(data[3], data[2].name);
+  constructor(generator, data, storage_data, _class) {
+    const menu = new generator(data[3], data[2].name);
 
-        const list = new List(generator, data, storage_data, _class);
-    }
+    const list = new List(generator, data, storage_data, _class);
+  }
 }

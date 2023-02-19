@@ -1,24 +1,24 @@
 @mixin full-size {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 @mixin item-size {
-    width: 3rem;
-    height: 3rem;
+  width: 3rem;
+  height: 3rem;
 }
 
 @mixin flip {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 3rem;
-    backface-visibility: hidden;
-    transition: transform .4s;
-    pointer-events: none;
-    border-radius: 50%;
-    border-width: 1px;
-    border-style: solid;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 3rem;
+  backface-visibility: hidden;
+  transition: transform 0.4s;
+  pointer-events: none;
+  border-radius: 50%;
+  border-width: 1px;
+  border-style: solid;
 }

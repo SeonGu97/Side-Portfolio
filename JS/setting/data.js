@@ -1,131 +1,171 @@
 export const Data = [
-    { // index 0
-        name: 'index',
-        element: 'div',
-        type: ['id'],
-        value: ['index'],
-        text: [],
-        number: 1,
-        array: [],
-    },
+  {
+    // index 0
+    name: "index",
+    element: "div",
+    type: ["id"],
+    value: ["index"],
+    text: [],
+    number: 1,
+    array: [],
+  },
 
-    { // aside 1
-        name: 'aside',
-        element: 'aside',
-        type: [],
-        value: [],
-        text: [],
-        number: 1,
-        array: [],
-    },
+  {
+    // aside 1
+    name: "aside",
+    element: "aside",
+    type: [],
+    value: [],
+    text: [],
+    number: 1,
+    array: [],
+  },
 
-    { // nav 2
-        name: 'nav',
-        element: 'nav',
-        type: [],
-        value: [],
-        text: [],
-        number: 1,
-        array: [],
-    },
-    
-    { // menu 3
-        name: 'menu',
-        element: 'section',
-        type: ['class'],
-        value: ['menu'],
-        text: [],
-        number: 1,
-        array: [],
-    },
+  {
+    // nav 2
+    name: "nav",
+    element: "nav",
+    type: [],
+    value: [],
+    text: [],
+    number: 1,
+    array: [],
+  },
 
-    { // mode 4
-        name: 'mode',
-        element: 'section',
-        type: ['class'],
-        value: ['mode'],
-        text: [],
-        number: 1,
-        array: [],
-    },
+  {
+    // menu 3
+    name: "menu",
+    element: "section",
+    type: ["class"],
+    value: ["menu"],
+    text: [],
+    number: 1,
+    array: [],
+  },
 
-    { // list 5
-        name: 'list',
-        element: 'ul',
-        type: ['class'],
-        value: ['list'],
-        text: ['<i class="bi bi-house"></i>', '<i class="bi bi-calendar-check"></i>', '<i class="bi bi-file"></i>', '<i class="bi bi-chat"></i>'],
-        number: 4,
-        array: [],
-    },
+  {
+    // mode 4
+    name: "mode",
+    element: "section",
+    type: ["class"],
+    value: ["mode"],
+    text: [],
+    number: 1,
+    array: [],
+  },
 
-    { // front 6
-        name: 'front',
-        element: 'div',
-        type: ['class'],
-        value: ['front'],
-        text: ['<i class="bi bi-moon-fill"></i>'],
-        number: 1,
-        array: [],
-    },
+  {
+    // list 5
+    name: "list",
+    element: "ul",
+    type: ["class"],
+    value: ["list"],
+    text: [
+      '<i class="bi bi-house"></i>',
+      '<i class="bi bi-calendar-check"></i>',
+      '<i class="bi bi-file"></i>',
+      '<i class="bi bi-chat"></i>',
+    ],
+    number: 4,
+    array: [],
+  },
 
-    { // back 7
-        name: 'back',
-        element: 'div',
-        type: ['class'],
-        value: ['back'],
-        text: ['<i class="bi bi-brightness-high-fill"></i>'],
-        number: 1,
-        array: [],
-    },
+  {
+    // front 6
+    name: "front",
+    element: "div",
+    type: ["class"],
+    value: ["front"],
+    text: ['<i class="bi bi-moon-fill"></i>'],
+    number: 1,
+    array: [],
+  },
 
-    { // item 8
-        name: 'item',
-        element: 'span',
-        type: ['class'],
-        value: ['item'],
-        text: ['Home', 'Todo', 'Project', 'About'],
-        number: 4,
-        array: [],
-    },
+  {
+    // back 7
+    name: "back",
+    element: "div",
+    type: ["class"],
+    value: ["back"],
+    text: ['<i class="bi bi-brightness-high-fill"></i>'],
+    number: 1,
+    array: [],
+  },
 
-    { // em 9
-        name: 'em',
-        element: 'div',
-        type: ['class'],
-        value: ['em'],
-        text: [],
-        number: 4,
-        array: [],
-    },
+  {
+    // item 8
+    name: "item",
+    element: "span",
+    type: ["class"],
+    value: ["item"],
+    text: ["Home", "Todo", "Project", "About"],
+    number: 4,
+    array: [],
+  },
 
-    { // library 10
-        name: 'library',
-        element: 'div',
-        type: ['class'],
-        value: ['library'],
-        text: [],
-        number: 1,
-        array: [],
-    },
+  {
+    // em 9
+    name: "em",
+    element: "div",
+    type: ["class"],
+    value: ["em"],
+    text: [],
+    number: 4,
+    array: [],
+  },
 
-    { // bookcase 11
-        name: 'bookcase',
-        element: 'ul',
-        type: ['class'],
-        value: ['bookcase'],
-        text: [],
-        number: 1,
-        array: [],
-    },
+  {
+    // library 10
+    name: "library",
+    element: "div",
+    type: ["class"],
+    value: ["library"],
+    text: [],
+    number: 1,
+    array: [],
+  },
 
-    { // book 12
-        name: 'book',
-        element: 'li',
-        type: ['class'],
-        value: ['book'],
-        text: ['Menu1', 'Menu2', 'Menu3'],
-        number: 3,
-        array: [],
-    },
+  {
+    // bookcase 11
+    name: "bookcase",
+    element: "ul",
+    type: ["class"],
+    value: ["bookcase"],
+    text: [],
+    number: 1,
+    array: [],
+  },
+
+  {
+    // book 12
+    name: "book",
+    element: "li",
+    type: ["class"],
+    value: ["book"],
+    text: ["Menu1", "Menu2", "Menu3"],
+    number: 3,
+    array: [],
+  },
+
+  {
+    // main 13
+    name: "main",
+    element: "main",
+    type: [],
+    value: [],
+    text: [],
+    number: 1,
+    array: [],
+  },
+
+  {
+    // container 14
+    name: "container",
+    element: "section",
+    type: ["class"],
+    value: ["container"],
+    text: [],
+    number: 4,
+    array: [],
+  },
 ];

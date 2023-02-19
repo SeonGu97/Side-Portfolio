@@ -13,16 +13,16 @@ export default class Mode {
     const _dark_mode = JSON.parse(localStorage.getItem(storage_data[0].name));
     const _index = JSON.parse(localStorage.getItem(storage_data[1].name));
 
-    data[4].name.addEventListener("click", e => {
+    data[4].name.addEventListener("click", (e) => {
       const target = e.target;
 
       _class.toggle(target, "active");
       _class.toggle(data[0].name, "dark-mode");
       _class.toggle(data[2].name, "dark-nav");
-      _class.toggle_all(data[5].array, 'dark-list');
+      _class.toggle_all(data[5].array, "dark-list");
       _class.toggle(data[6].name, "f-active");
       _class.toggle(data[7].name, "b-active");
-      _class.toggle(data[10].name, 'dark-library');
+      _class.toggle(data[10].name, "dark-library");
 
       let boolean;
 
@@ -36,10 +36,10 @@ export default class Mode {
       _dark_mode.push(boolean);
 
       localStorage.setItem(storage_data[0].name, JSON.stringify(_dark_mode));
-    
-      if(_dark_mode[0]) {
+
+      if (_dark_mode[0]) {
         _class.add_all(data[9].array, "dark-em");
-      }else {
+      } else {
         _class.remove_all(data[9].array, "dark-em");
       }
     });
@@ -52,13 +52,13 @@ export default class Mode {
       _class.add(data[0].name, "dark-mode");
       _class.add(data[2].name, "dark-nav");
       _class.add(data[4].name, "active");
-      _class.add_all(data[5].array, 'dark-list');
+      _class.add_all(data[5].array, "dark-list");
       _class.add(data[6].name, "f-active");
       _class.add(data[7].name, "b-active");
       _class.add(data[9].array[_index], "dark-em");
-      _class.add_all(data[9].array, 'dark-em');
+      _class.add_all(data[9].array, "dark-em");
     } else {
-      _class.remove_all(data[9].array, 'dark-em');
+      _class.remove_all(data[9].array, "dark-em");
     }
   }
 }
