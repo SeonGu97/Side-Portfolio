@@ -42,11 +42,19 @@ export default class List {
         _class.remove_all(data[9].array, "show-em");
         _class.add(data[9].array[target_index], "show-em");
 
+        _class.remove_all(data[14].array, "surperise");
+        _class.add(data[14].array[target_index], "surperise");
+
         if (target_index == 3) {
           _class.add(data[13].name, "main-move");
         } else {
           _class.remove(data[13].name, "main-move");
         }
+
+        data[14].array.forEach((element) => {
+          element.remove();
+        });
+        data[13].name.appendChild(data[14].array[_index]);
 
         localStorage.setItem(storage_data[1].name, JSON.stringify(_index));
       });

@@ -168,4 +168,15 @@ export const Data = [
     number: 4,
     array: [],
   },
+
+  {
+    // home_img 15
+    name: "home_img",
+    element: "div",
+    type: ["class"],
+    value: ["home_img"],
+    text: [],
+    number: 1,
+    array: [],
+  },
 ];

@@ -21,5 +21,10 @@ export default class Main {
 
   maintains(data, _class, _index) {
     if (_index === 3) _class.add(data[13].name, "main-move");
+    data[14].array.forEach((element) => {
+      element.remove();
+    });
+    data[13].name.appendChild(data[14].array[_index]);
+    _class.add(data[14].array[_index], "surperise");
   }
 }
