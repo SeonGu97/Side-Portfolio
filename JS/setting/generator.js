@@ -5,16 +5,21 @@ export default class Generator {
     this.data = data;
     this.parent = parent;
 
-    for (let i = 0; i < this.data.number; i++) {
-      this.create();
-      this.attrs();
-      this.array();
-      this.add(i);
-    }
+    this.create();
   }
 
   create() {
-    this.data.name = document.createElement(this.data.element);
+    for (let i = 0; i < this.data.number; i++) {
+      this.data.name = document.createElement(this.data.element);
+
+      this.attrs();
+
+      this.array();
+
+      this.add();
+
+      this.text(i);
+    }
   }
 
   attrs() {
@@ -27,21 +32,19 @@ export default class Generator {
     this.data.array.push(this.data.name);
   }
 
-  add(i) {
-    this.i = i;
-
+  add() {
     if (Array.isArray(this.parent)) {
-      this.parent[this.i].append(this.data.name);
-
-      this.data.name.innerHTML = this.data.text[this.i];
+      this.parent.forEach((element, index, array) => {
+        element.appendChild(this.data.name);
+      });
     } else {
-      this.parent.append(this.data.name);
-
-      this.data.name.innerHTML = this.data.text[this.i];
+      this.parent.appendChild(this.data.name);
     }
+  }
 
-    if (this.data.name.innerHTML == "undefined") {
-      this.data.name.innerHTML = "";
-    }
+  text(i) {
+    this.data.name.innerHTML = this.data.text[i];
+
+    if (this.data.name.innerHTML == "undefined") this.data.name.innerHTML = "";
   }
 }

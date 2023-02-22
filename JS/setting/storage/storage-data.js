@@ -1,16 +1,16 @@
 const StorageData = [
   {
     // 0
-    name: "Dark-Mode",
+    name: "Index",
     value: null,
-    basic: false,
+    basic: 0,
   },
 
   {
     // 1
-    name: "Index",
+    name: "Dark-Mode",
     value: null,
-    basic: 0,
+    basic: false,
   },
 
   {
