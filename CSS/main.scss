@@ -4,6 +4,7 @@
 
 * {
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 html {
@@ -19,60 +20,47 @@ body {
   @include full-size;
   position: relative;
   color: rgba(0, 0, 0, 0.75);
-  overflow: hidden;
 
   aside {
     &:nth-child(1) {
       width: $aside1-width;
-      height: 100%;
-      background: #efefef;
+      @include aside;
 
       nav {
-        display: flex;
-        @include full-size;
-        flex-direction: column;
-        justify-content: space-between;
+        @include nav;
 
         .menu {
-          display: flex;
-          width: 100%;
-          flex-direction: column;
+          @include menu;
           gap: 1.5rem;
           padding-top: 1.5rem;
 
           .item {
-            display: flex;
+            @include item;
             flex-direction: column;
             align-items: center;
             padding: 0.5rem 0;
             gap: 0.5rem;
-            cursor: pointer;
             position: relative;
 
             .em {
-              width: 0.3rem;
-              height: 90%;
-              background: steelblue;
-              border-radius: 0 1rem 1rem 0;
-              opacity: 0;
-              position: absolute;
-              top: 5%;
-              left: 0;
+              @include em;
             }
 
             i {
+              @include pointer-events-none;
               font-size: 1.25rem;
               padding: 0.25rem 0.75rem;
               border-radius: 1rem;
             }
 
             .text {
+              @include pointer-events-none;
               font-size: 0.75rem;
               font-weight: bold;
             }
 
             &:hover i {
-              background: rgba(150, 150, 150, 0.2);
+              @include hover;
             }
 
             .paint {
@@ -80,27 +68,51 @@ body {
             }
           }
         }
-      }
 
-      .mode {
-        width: calc(100% - 1.5rem);
-        height: $aside1-width - 1.5rem;
-        margin: 0.75rem;
+        .mode {
+          @include mode;
+          width: calc(100% - 1.5rem);
+          height: $aside1-width - 1.5rem;
+          margin: 0.75rem;
+          border-radius: 50%;
+          transform-style: preserve-3d;
+          position: relative;
 
-        .front {
-          @include full-size;
-        }
+          .front {
+            @include front;
+            @include full-size;
+            @include pointer-events-none;
+            backface-visibility: hidden;
+            position: absolute;
+          }
 
-        .back {
-          @include full-size;
+          .back {
+            @include back;
+            @include full-size;
+            @include pointer-events-none;
+            backface-visibility: hidden;
+            position: absolute;
+            transform: rotateY(-180deg);
+          }
+
+          &:hover {
+            @include hover;
+          }
+
+          .front.switch {
+            transform: rotateY(180deg);
+          }
+
+          .back.switch {
+            transform: rotateY(0deg);
+          }
         }
       }
     }
 
     &:nth-child(2) {
+      @include aside;
       width: $aside2-width;
-      height: 100%;
-      background: #eee;
       border-radius: 0 1rem 1rem 0;
 
       position: absolute;
@@ -108,34 +120,62 @@ body {
       left: 30%;
 
       nav {
-        display: flex;
+        @include nav;
         padding: 1.5rem 0.5rem 0 0.5rem;
 
         .menu {
-          display: flex;
-          width: 100%;
-          flex-direction: column;
+          @include menu;
           gap: 0.5rem;
 
           .item {
-            display: flex;
-            width: 100%;
+            @include item;
             padding: 0.75rem;
             border-radius: 2rem;
             gap: 1rem;
-            cursor: pointer;
 
             i {
+              @include pointer-events-none;
               font-size: 1rem;
             }
 
             .text {
+              @include pointer-events-none;
               font-size: 1rem;
             }
 
             &:hover {
-              background: rgba(150, 150, 150, 0.2);
+              @include hover;
             }
+          }
+        }
+
+        .mode {
+          @include mode;
+          width: 100%;
+          height: $aside1-width - 2.5rem;
+          margin: 0.75rem 0;
+          border-radius: 2rem;
+
+          .front {
+            @include front;
+            @include full-size;
+            @include pointer-events-none;
+            padding: 0.5rem;
+          }
+
+          .back {
+            @include back;
+            @include full-size;
+            @include pointer-events-none;
+            padding: 0.5rem;
+          }
+
+          &:hover {
+            @include hover;
+          }
+
+          .switch {
+            transform: translateY(-100%);
           }
         }
       }

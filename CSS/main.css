@@ -55,6 +55,7 @@ table {
 
 * {
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 html {
@@ -73,7 +74,6 @@ body {
   height: 100%;
   position: relative;
   color: rgba(0, 0, 0, 0.75);
-  overflow: hidden;
 }
 #index aside:nth-child(1) {
   width: 5rem;
@@ -96,11 +96,12 @@ body {
 }
 #index aside:nth-child(1) nav .menu .item {
   display: flex;
+  width: 100%;
+  cursor: pointer;
   flex-direction: column;
   align-items: center;
   padding: 0.5rem 0;
   gap: 0.5rem;
-  cursor: pointer;
   position: relative;
 }
 #index aside:nth-child(1) nav .menu .item .em {
@@ -114,11 +115,13 @@ body {
   left: 0;
 }
 #index aside:nth-child(1) nav .menu .item i {
+  pointer-events: none;
   font-size: 1.25rem;
   padding: 0.25rem 0.75rem;
   border-radius: 1rem;
 }
 #index aside:nth-child(1) nav .menu .item .text {
+  pointer-events: none;
   font-size: 0.75rem;
   font-weight: bold;
 }
@@ -128,23 +131,55 @@ body {
 #index aside:nth-child(1) nav .menu .item .paint {
   opacity: 1;
 }
-#index aside:nth-child(1) .mode {
+#index aside:nth-child(1) nav .mode {
+  border: 1px solid #bdbdbd;
+  cursor: pointer;
   width: calc(100% - 1.5rem);
   height: 3.5rem;
   margin: 0.75rem;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  position: relative;
 }
-#index aside:nth-child(1) .mode .front {
+#index aside:nth-child(1) nav .mode .front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s ease;
   width: 100%;
   height: 100%;
+  pointer-events: none;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  position: absolute;
 }
-#index aside:nth-child(1) .mode .back {
+#index aside:nth-child(1) nav .mode .back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s ease;
+  font-size: 1.5rem;
   width: 100%;
   height: 100%;
+  pointer-events: none;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  position: absolute;
+  transform: rotateY(-180deg);
+}
+#index aside:nth-child(1) nav .mode:hover {
+  background: rgba(150, 150, 150, 0.2);
+}
+#index aside:nth-child(1) nav .mode .front.switch {
+  transform: rotateY(180deg);
+}
+#index aside:nth-child(1) nav .mode .back.switch {
+  transform: rotateY(0deg);
 }
 #index aside:nth-child(2) {
-  width: 12.5rem;
   height: 100%;
-  background: #eee;
+  background: #efefef;
+  width: 12.5rem;
   border-radius: 0 1rem 1rem 0;
   position: absolute;
   top: 0;
@@ -152,6 +187,10 @@ body {
 }
 #index aside:nth-child(2) nav {
   display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 1.5rem 0.5rem 0 0.5rem;
 }
 #index aside:nth-child(2) nav .menu {
@@ -163,19 +202,56 @@ body {
 #index aside:nth-child(2) nav .menu .item {
   display: flex;
   width: 100%;
+  cursor: pointer;
   padding: 0.75rem;
   border-radius: 2rem;
   gap: 1rem;
-  cursor: pointer;
 }
 #index aside:nth-child(2) nav .menu .item i {
+  pointer-events: none;
   font-size: 1rem;
 }
 #index aside:nth-child(2) nav .menu .item .text {
+  pointer-events: none;
   font-size: 1rem;
 }
 #index aside:nth-child(2) nav .menu .item:hover {
   background: rgba(150, 150, 150, 0.2);
+}
+#index aside:nth-child(2) nav .mode {
+  border: 1px solid #bdbdbd;
+  cursor: pointer;
+  width: 100%;
+  height: 2.5rem;
+  margin: 0.75rem 0;
+  border-radius: 2rem;
+}
+#index aside:nth-child(2) nav .mode .front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s ease;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  padding: 0.5rem;
+}
+#index aside:nth-child(2) nav .mode .back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s ease;
+  font-size: 1.5rem;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  padding: 0.5rem;
+}
+#index aside:nth-child(2) nav .mode:hover {
+  background: rgba(150, 150, 150, 0.2);
+}
+#index aside:nth-child(2) nav .mode .switch {
+  transform: translateY(-100%);
 }
 #index .active {
   background: rgba(150, 150, 150, 0.1);
