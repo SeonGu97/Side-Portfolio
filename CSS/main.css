@@ -74,11 +74,15 @@ body {
   height: 100%;
   position: relative;
   color: rgba(0, 0, 0, 0.75);
+  background: #fafafa;
 }
 #index aside:nth-child(1) {
   width: 5rem;
   height: 100%;
-  background: #efefef;
+  background: #eceff1;
+}
+#index aside:nth-child(1).dark-mode {
+  background: #424242;
 }
 #index aside:nth-child(1) nav {
   display: flex;
@@ -106,13 +110,16 @@ body {
 }
 #index aside:nth-child(1) nav .menu .item .em {
   width: 0.3rem;
-  height: 90%;
+  height: 100%;
   background: steelblue;
   border-radius: 0 1rem 1rem 0;
   opacity: 0;
   position: absolute;
-  top: 5%;
+  top: 0;
   left: 0;
+}
+#index aside:nth-child(1) nav .menu .item .em.dark-mode {
+  background: indianred;
 }
 #index aside:nth-child(1) nav .menu .item i {
   pointer-events: none;
@@ -132,7 +139,9 @@ body {
   opacity: 1;
 }
 #index aside:nth-child(1) nav .mode {
-  border: 1px solid #bdbdbd;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #bdbdbd;
   cursor: pointer;
   width: calc(100% - 1.5rem);
   height: 3.5rem;
@@ -140,6 +149,9 @@ body {
   border-radius: 50%;
   transform-style: preserve-3d;
   position: relative;
+}
+#index aside:nth-child(1) nav .mode.dark-mode {
+  border-color: #757575;
 }
 #index aside:nth-child(1) nav .mode .front {
   display: flex;
@@ -178,12 +190,15 @@ body {
 }
 #index aside:nth-child(2) {
   height: 100%;
-  background: #efefef;
+  background: #eceff1;
   width: 12.5rem;
-  border-radius: 0 1rem 1rem 0;
+  border-radius: 0 0.75rem 0.75rem 0;
   position: absolute;
   top: 0;
   left: 30%;
+}
+#index aside:nth-child(2).dark-mode {
+  background: #424242;
 }
 #index aside:nth-child(2) nav {
   display: flex;
@@ -219,12 +234,17 @@ body {
   background: rgba(150, 150, 150, 0.2);
 }
 #index aside:nth-child(2) nav .mode {
-  border: 1px solid #bdbdbd;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #bdbdbd;
   cursor: pointer;
   width: 100%;
   height: 2.5rem;
   margin: 0.75rem 0;
   border-radius: 2rem;
+}
+#index aside:nth-child(2) nav .mode.dark-mode {
+  border-color: #757575;
 }
 #index aside:nth-child(2) nav .mode .front {
   display: flex;
@@ -255,4 +275,8 @@ body {
 }
 #index .active {
   background: rgba(150, 150, 150, 0.1);
+}
+#index.dark-mode {
+  background: #212121;
+  color: #bdbdbd;
 }/*# sourceMappingURL=main.css.map */

@@ -14,8 +14,8 @@ export const Data = [
     // aside 1
     name: "aside",
     element: "aside",
-    type: [],
-    value: [],
+    type: ["class"],
+    value: ["aside"],
     text: [],
     number: 1,
     array: [],

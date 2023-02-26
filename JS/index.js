@@ -100,9 +100,13 @@ export default class Index {
       element.addEventListener("click", (e) => {
         const target = e.target;
 
-        if (e.target.classList[0] == "mode") {
+        if (target.classList[0] == "mode") {
           array.forEach((element) => {
             _class.toggle_all(element.childNodes[1].childNodes, "switch");
+            _class.toggle(element.childNodes[1], "dark-mode");
+            element.childNodes[0].childNodes.forEach((element) => {
+              _class.toggle(element.childNodes[2], "dark-mode");
+            });
 
             let boolean;
 
@@ -124,6 +128,15 @@ export default class Index {
       });
     });
 
+    data[0].name.addEventListener("click", (e) => {
+      const target = e.target;
+
+      if (target.classList[0] == "mode") {
+        _class.toggle(data[0].name, "dark-mode");
+        _class.toggle_all(data[1].array, "dark-mode");
+      }
+    });
+
     this.maintains(data, _class);
   }
 
@@ -141,6 +154,11 @@ export default class Index {
       data[8].array.forEach((element) => {
         _class.add(element, "switch");
       });
+
+      _class.add(data[0].name, "dark-mode");
+      _class.add_all(data[1].array, "dark-mode");
+      _class.add_all(data[4].array, "dark-mode");
+      _class.add_all(data[9].array, "dark-mode");
     }
   }
 }
