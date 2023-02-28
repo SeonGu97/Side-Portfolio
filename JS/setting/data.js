@@ -113,4 +113,37 @@ export const Data = [
     number: 1,
     array: [],
   },
+
+  {
+    // header 10
+    name: "header",
+    element: "header",
+    type: [],
+    value: [],
+    text: [],
+    number: 1,
+    array: [],
+  },
+
+  {
+    // bar 11
+    name: "bar",
+    element: "div",
+    type: ["class"],
+    value: ["bar"],
+    text: ['<i class="bi bi-list"></i>'],
+    number: 1,
+    array: [],
+  },
+
+  {
+    // logo 12
+    name: "logo",
+    element: "div",
+    type: ["class"],
+    value: ["logo"],
+    text: [],
+    number: 1,
+    array: [],
+  },
 ];

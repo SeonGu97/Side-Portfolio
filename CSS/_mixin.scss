@@ -81,3 +81,18 @@
   transition: 0.4s ease;
   font-size: 1.5rem;
 }
+
+@mixin header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 1.25rem;
+  background: #eceff1;
+  padding: 0.5rem 1.25rem;
+  position: fixed;
+  top: 0;
+
+  &.dark-mode {
+    background: #424242;
+  }
+}

@@ -14,6 +14,7 @@ import Storage_Data from "./setting/storage/storage-data.js";
 import Aside from "./aisde/aside.js";
 import Text from "./aisde/nav/menu/item/text/text.js";
 import Em from "./aisde/nav/menu/item/em/em.js";
+import Header from "./header/header.js";
 
 export default class Index {
   constructor(generator, data) {
@@ -39,7 +40,7 @@ export default class Index {
     const aside1 = new Aside(
       generator,
       data,
-      data[0].array,
+      data[0].name,
       _class,
       storage_data,
       storage_creater
@@ -47,11 +48,13 @@ export default class Index {
     const aside2 = new Aside(
       generator,
       data,
-      data[0].array,
+      data[0].name,
       _class,
       storage_data,
       storage_creater
     );
+
+    const header = new Header(generator, data, data[0].name);
 
     this.Index = JSON.parse(localStorage.getItem(storage_data[0].name));
     this.Dark_Mode = JSON.parse(localStorage.getItem(storage_data[1].name));
@@ -134,6 +137,7 @@ export default class Index {
       if (target.classList[0] == "mode") {
         _class.toggle(data[0].name, "dark-mode");
         _class.toggle_all(data[1].array, "dark-mode");
+        _class.toggle(data[10].name, "dark-mode");
       }
     });
 
@@ -159,6 +163,7 @@ export default class Index {
       _class.add_all(data[1].array, "dark-mode");
       _class.add_all(data[4].array, "dark-mode");
       _class.add_all(data[9].array, "dark-mode");
+      _class.add(data[10].name, "dark-mode");
     }
   }
 }
