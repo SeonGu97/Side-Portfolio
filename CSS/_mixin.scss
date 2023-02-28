@@ -8,9 +8,14 @@
 @mixin aside {
   height: 100%;
   background: #eceff1;
+  transition: transform 0.4s ease;
 
   &.dark-mode {
     background: #424242;
+  }
+
+  &.show {
+    transform: translateX(0);
   }
 }
 
@@ -83,7 +88,6 @@
 }
 
 @mixin header {
-  display: flex;
   width: 100%;
   align-items: center;
   gap: 1.25rem;
@@ -91,6 +95,7 @@
   padding: 0.5rem 1.25rem;
   position: fixed;
   top: 0;
+  z-index: 10;
 
   &.dark-mode {
     background: #424242;

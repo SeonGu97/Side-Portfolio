@@ -15,6 +15,9 @@ import Aside from "./aisde/aside.js";
 import Text from "./aisde/nav/menu/item/text/text.js";
 import Em from "./aisde/nav/menu/item/em/em.js";
 import Header from "./header/header.js";
+import Exit from "./exit/exit.js";
+
+import resize from "./resize/resize.js";
 
 export default class Index {
   constructor(generator, data) {
@@ -54,7 +57,9 @@ export default class Index {
       storage_creater
     );
 
-    const header = new Header(generator, data, data[0].name);
+    const header = new Header(generator, data, data[0].name, _class);
+
+    const exit = new Exit(generator, data, data[0].name, _class);
 
     this.Index = JSON.parse(localStorage.getItem(storage_data[0].name));
     this.Dark_Mode = JSON.parse(localStorage.getItem(storage_data[1].name));
@@ -142,6 +147,9 @@ export default class Index {
     });
 
     this.maintains(data, _class);
+
+    const _resize = resize;
+    _resize(data, _class);
   }
 
   maintains(data, _class) {

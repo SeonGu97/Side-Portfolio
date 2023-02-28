@@ -146,4 +146,15 @@ export const Data = [
     number: 1,
     array: [],
   },
+
+  {
+    // exit 13
+    name: "exit",
+    element: "div",
+    type: ["class"],
+    value: ["exit"],
+    text: [],
+    number: 1,
+    array: [],
+  },
 ];
