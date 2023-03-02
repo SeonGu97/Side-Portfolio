@@ -16,6 +16,7 @@ import Text from "./aisde/nav/menu/item/text/text.js";
 import Em from "./aisde/nav/menu/item/em/em.js";
 import Header from "./header/header.js";
 import Exit from "./exit/exit.js";
+import Library from "./aisde/library/library.js";
 
 import resize from "./resize/resize.js";
 
@@ -61,6 +62,8 @@ export default class Index {
 
     const exit = new Exit(generator, data, data[0].name, _class);
 
+    const library = new Library(generator, data, data[0].name, _class);
+
     this.Index = JSON.parse(localStorage.getItem(storage_data[0].name));
     this.Dark_Mode = JSON.parse(localStorage.getItem(storage_data[1].name));
     this.text = ["Home", "Todo", "Project", "About"];
@@ -76,6 +79,20 @@ export default class Index {
       const em = new Em(generator, data, element);
 
       element.childNodes[1].innerText = this.text[index];
+
+      element.addEventListener("mouseenter", (e) => {
+        const target = e.target;
+
+        if (target.index == 3) {
+          _class.add(data[14].name, "show");
+        } else {
+          _class.remove(data[14].name, "show");
+        }
+      });
+
+      element.addEventListener("mouseleave", (e) => {
+        _class.remove(data[14].name, "show");
+      });
     });
 
     data[3].array.forEach((element, index, array) => {
@@ -136,6 +153,16 @@ export default class Index {
       });
     });
 
+    data[2].array[0].addEventListener("click", (e) => {
+      const target = e.target;
+
+      if (target.index == 3) {
+        _class.add(data[14].name, "fix");
+      } else {
+        _class.remove(data[14].name, "fix");
+      }
+    });
+
     data[0].name.addEventListener("click", (e) => {
       const target = e.target;
 
@@ -143,6 +170,10 @@ export default class Index {
         _class.toggle(data[0].name, "dark-mode");
         _class.toggle_all(data[1].array, "dark-mode");
         _class.toggle(data[10].name, "dark-mode");
+        _class.toggle_all(data[14].array, "dark-mode");
+        if (this.Index == 3) {
+          _class.add(data[14].name, "fix");
+        }
       }
     });
 
@@ -172,6 +203,12 @@ export default class Index {
       _class.add_all(data[4].array, "dark-mode");
       _class.add_all(data[9].array, "dark-mode");
       _class.add(data[10].name, "dark-mode");
+
+      _class.toggle_all(data[14].array, "dark-mode");
+    }
+
+    if (this.Index == 3) {
+      _class.add(data[14].name, "fix");
     }
   }
 }

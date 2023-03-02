@@ -28,6 +28,8 @@ body {
     &:nth-child(1) {
       width: $aside1-width;
       @include aside;
+      position: relative;
+      z-index: 10;
 
       nav {
         @include nav;
@@ -250,11 +252,22 @@ body {
       display: block;
     }
   }
+
+  .library {
+    @include library;
+  }
 }
 
 @include desktop {
   header {
     display: none;
+  }
+
+  .library {
+    width: 15rem;
+    height: 200px;
+    position: absolute;
+    top: 0;
   }
 }
 
@@ -268,6 +281,10 @@ body {
       display: none;
     }
   }
+
+  .library {
+    display: none;
+  }
 }
 
 @include mobile {
@@ -279,5 +296,9 @@ body {
     &:first-child {
       display: none;
     }
+  }
+
+  .library {
+    display: none;
   }
 }
