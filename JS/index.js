@@ -180,7 +180,7 @@ export default class Index {
     this.maintains(data, _class);
 
     const _resize = resize;
-    _resize(data, _class);
+    _resize(data, _class, this.Index);
   }
 
   maintains(data, _class) {

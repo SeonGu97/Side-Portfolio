@@ -7,6 +7,7 @@
   box-sizing: border-box;
   overflow: hidden;
   white-space: nowrap;
+  list-style: none;
 }
 
 html {
@@ -264,10 +265,7 @@ body {
   }
 
   .library {
-    width: 15rem;
-    height: 200px;
-    position: absolute;
-    top: 0;
+    display: flex;
   }
 }
 

@@ -1,7 +1,7 @@
 let timer;
 let delay = "100";
 
-const resize = (data, _class) => {
+const resize = (data, _class, index) => {
   window.addEventListener("resize", (e) => {
     clearTimeout(timer);
 
@@ -16,6 +16,16 @@ const resize = (data, _class) => {
         _class.remove(data[11].name, "show");
         data[11].name.innerHTML = '<i class="bi bi-list"></i>';
         _class.remove(data[13].name, "show");
+
+        if (index == 3) {
+          _class.add(data[14].name, "fix");
+        }
+      } else {
+        if (index == 3) {
+          _class.contains(data[14].name, "fix") == true
+            ? _class.remove(data[14].name, "fix")
+            : "";
+        }
       }
     }, delay);
   });
