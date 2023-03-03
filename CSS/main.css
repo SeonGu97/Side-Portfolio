@@ -220,7 +220,7 @@ body {
   transition-delay: 0.25s;
   padding: 1.5rem 0.5rem;
   position: absolute;
-  z-index: 0;
+  z-index: 10;
 }
 #index aside:nth-child(1) .library.dark-mode {
   background: #424242;
