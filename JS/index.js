@@ -17,6 +17,7 @@ import Em from "./aisde/nav/menu/item/em/em.js";
 import Header from "./header/header.js";
 import Exit from "./exit/exit.js";
 import Library from "./aisde/library/library.js";
+import Main from "./mian/main.js";
 
 import resize from "./resize/resize.js";
 
@@ -41,6 +42,8 @@ export default class Index {
       false
     );
 
+    //
+
     const aside1 = new Aside(
       generator,
       data,
@@ -62,7 +65,11 @@ export default class Index {
 
     const exit = new Exit(generator, data, data[0].name, _class);
 
-    const library = new Library(generator, data, data[0].name, _class);
+    const library = new Library(generator, data, data[1].array[0], _class);
+
+    const main = new Main(generator, data, data[0].name, _class);
+
+    //
 
     this.Index = JSON.parse(localStorage.getItem(storage_data[0].name));
     this.Dark_Mode = JSON.parse(localStorage.getItem(storage_data[1].name));
@@ -132,6 +139,7 @@ export default class Index {
             element.childNodes[0].childNodes.forEach((element) => {
               _class.toggle(element.childNodes[2], "dark-mode");
             });
+            _class.toggle(element, "dark-mode");
 
             let boolean;
 
@@ -155,11 +163,10 @@ export default class Index {
 
     data[2].array[0].addEventListener("click", (e) => {
       const target = e.target;
-
-      if (target.index == 3) {
-        _class.add(data[14].name, "fix");
-      } else {
-        _class.remove(data[14].name, "fix");
+      if (target.classList[0] == "item") {
+        target.index == 3
+          ? _class.add(data[14].name, "fix")
+          : _class.remove(data[14].name, "fix");
       }
     });
 
@@ -200,11 +207,12 @@ export default class Index {
 
       _class.add(data[0].name, "dark-mode");
       _class.add_all(data[1].array, "dark-mode");
+      _class.add_all(data[2].array, "dark-mode");
       _class.add_all(data[4].array, "dark-mode");
       _class.add_all(data[9].array, "dark-mode");
       _class.add(data[10].name, "dark-mode");
 
-      _class.toggle_all(data[14].array, "dark-mode");
+      _class.add_all(data[14].array, "dark-mode");
     }
 
     if (this.Index == 3) {
