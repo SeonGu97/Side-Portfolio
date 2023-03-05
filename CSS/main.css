@@ -81,7 +81,7 @@ body {
   width: 100%;
   height: 100%;
   color: rgba(0, 0, 0, 0.75);
-  background: #fafafa;
+  background: #f5f5f5;
   position: relative;
 }
 #index.dark-mode {
@@ -399,10 +399,22 @@ body {
   display: block;
 }
 #index main {
+  display: flex;
   width: 100%;
   height: 100%;
+  justify-content: center;
+  padding: 0.5rem 0.5rem 0 0.5rem;
   position: relative;
   z-index: 0;
+}
+#index main .container {
+  max-width: 1920px;
+  width: 100%;
+}
+#index main .container .main_img {
+  width: calc(100% - 5rem);
+  height: 32.5rem;
+  border-radius: 1.5rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -423,6 +435,13 @@ body {
   aside:nth-child(2) {
     display: flex !important;
   }
+  main {
+    padding: 0.75rem 0.5rem 0 0.5rem !important;
+  }
+  main .main_img {
+    width: 100% !important;
+    height: 22.5rem !important;
+  }
 }
 @media screen and (max-width: 767px) {
   #index {
@@ -433,5 +452,13 @@ body {
   }
   aside:nth-child(2) {
     display: flex !important;
+  }
+  main {
+    width: 100% !important;
+    padding: 1rem 0.5rem 0 0.5rem !important;
+  }
+  main .main_img {
+    width: 100% !important;
+    height: 17.5rem !important;
   }
 }/*# sourceMappingURL=main.css.map */

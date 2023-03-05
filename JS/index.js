@@ -67,12 +67,11 @@ export default class Index {
 
     const library = new Library(generator, data, data[1].array[0], _class);
 
-    const main = new Main(generator, data, data[0].name, _class);
-
-    //
-
     this.Index = JSON.parse(localStorage.getItem(storage_data[0].name));
     this.Dark_Mode = JSON.parse(localStorage.getItem(storage_data[1].name));
+
+    const main = new Main(generator, data, data[0].name, _class, this.Index[0]);
+
     this.text = ["Home", "Todo", "Project", "About"];
 
     data[5].array.forEach((element, index) => {
@@ -124,6 +123,11 @@ export default class Index {
             storage_data[0].name,
             JSON.stringify(this.Index)
           );
+
+          data[17].array.forEach((element) => {
+            element.remove();
+          });
+          data[16].name.appendChild(data[17].array[this.Index]);
         }
       });
     });

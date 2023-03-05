@@ -201,4 +201,15 @@ export const Data = [
     number: 4,
     array: [],
   },
+
+  {
+    // main_img 18
+    name: "main_img",
+    element: "img",
+    type: ["class", "src", "alt"],
+    value: ["main_img", "./Img/main-img.jpg", "메인 이미지"],
+    text: [],
+    number: 1,
+    array: [],
+  },
 ];
