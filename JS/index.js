@@ -114,6 +114,11 @@ export default class Index {
 
             _class.remove_all(data[9].array, "paint");
             _class.add(data[9].array[target.index], "paint");
+
+            _class.remove_all(data[17].array, "up");
+            setTimeout(() => {
+              _class.add(data[17].array[target.index], "up");
+            }, 100);
           });
 
           this.Index.shift();
@@ -185,6 +190,8 @@ export default class Index {
         if (this.Index == 3) {
           _class.add(data[14].name, "fix");
         }
+        _class.toggle_all(data[20].array, "dark-mode");
+        _class.toggle(data[21].name, "dark-mode");
       }
     });
 
@@ -192,6 +199,10 @@ export default class Index {
 
     const _resize = resize;
     _resize(data, _class, this.Index);
+
+    window.onload = () => {
+      _class.add(data[17].array[this.Index], "up");
+    };
   }
 
   maintains(data, _class) {
@@ -215,8 +226,9 @@ export default class Index {
       _class.add_all(data[4].array, "dark-mode");
       _class.add_all(data[9].array, "dark-mode");
       _class.add(data[10].name, "dark-mode");
-
       _class.add_all(data[14].array, "dark-mode");
+      _class.add_all(data[20].array, "dark-mode");
+      _class.add(data[21].name, "dark-mode");
     }
 
     if (this.Index == 3) {

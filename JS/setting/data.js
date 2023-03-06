@@ -205,9 +205,42 @@ export const Data = [
   {
     // main_img 18
     name: "main_img",
-    element: "img",
-    type: ["class", "src", "alt"],
-    value: ["main_img", "./Img/main-img.jpg", "메인 이미지"],
+    element: "div",
+    type: ["class", "alt"],
+    value: ["main_img", "메인 이미지"],
+    text: [],
+    number: 1,
+    array: [],
+  },
+
+  {
+    // main_text 19
+    name: "main_text",
+    element: "div",
+    type: ["class"],
+    value: ["main_text"],
+    text: [],
+    number: 3,
+    array: [],
+  },
+
+  {
+    // main_word 20
+    name: "main_word",
+    element: "sapn",
+    type: ["class"],
+    value: ["main_word"],
+    text: [],
+    number: 2,
+    array: [],
+  },
+
+  {
+    // main_img_cover 21
+    name: "main_img_cover",
+    element: "div",
+    type: ["class"],
+    value: ["main_img_cover"],
     text: [],
     number: 1,
     array: [],
