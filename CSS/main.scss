@@ -382,6 +382,10 @@ body {
       opacity: 0;
 
       .main_img {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
         border-radius: 1.5rem;
         background-image: url(../Img/main-img.jpg);
         background-size: 100%;
@@ -463,6 +467,20 @@ body {
             }
           }
         }
+
+        .scroll_icon {
+          .scroll_ball {
+            background: $dark-mode-bg-color-1;
+            border-radius: 50%;
+            opacity: 0.9;
+
+            &.down {
+              transform: translateY(250%);
+              transition: 1s ease;
+              opacity: 0;
+            }
+          }
+        }
       }
 
       .main_img_cover {
@@ -521,6 +539,20 @@ body {
             }
           }
         }
+
+        .scroll_icon {
+          width: 1.25rem;
+          height: 2.5rem;
+          border: 2px solid $dark-mode-bg-color-2;
+          border-radius: 1rem;
+          margin-top: 1rem;
+          padding: 0.25rem;
+
+          .scroll_ball {
+            width: 100%;
+            height: 0.5rem;
+          }
+        }
       }
     }
   }
@@ -568,6 +600,20 @@ body {
         }
       }
     }
+
+    .scroll_icon {
+      width: 1rem;
+      height: 2rem;
+      border: 1px solid $dark-mode-bg-color-2;
+      border-radius: 1rem;
+      margin-top: 1rem;
+      padding: 0.25rem;
+
+      .scroll_ball {
+        width: 100%;
+        height: 0.4rem;
+      }
+    }
   }
 }
 
@@ -612,6 +658,20 @@ body {
               font-size: 0.75rem;
             }
           }
+        }
+      }
+
+      .scroll_icon {
+        width: 0.75rem;
+        height: 1.5rem;
+        border: 1px solid $dark-mode-bg-color-2;
+        border-radius: 1rem;
+        margin-top: 0.75rem;
+        padding: 0.2rem;
+
+        .scroll_ball {
+          width: 100%;
+          height: 0.25rem;
         }
       }
     }

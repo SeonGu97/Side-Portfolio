@@ -245,4 +245,26 @@ export const Data = [
     number: 1,
     array: [],
   },
+
+  {
+    // scroll_icon 22
+    name: "scroll_icon",
+    element: "div",
+    type: ["class"],
+    value: ["scroll_icon"],
+    text: [],
+    number: 1,
+    array: [],
+  },
+
+  {
+    // scroll_ball 23
+    name: "scroll_ball",
+    element: "div",
+    type: ["class"],
+    value: ["scroll_ball"],
+    text: [],
+    number: 1,
+    array: [],
+  },
 ];

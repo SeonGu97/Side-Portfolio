@@ -415,6 +415,10 @@ body {
   opacity: 0;
 }
 #index main .container .main_img {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   border-radius: 1.5rem;
   background-image: url(../Img/main-img.jpg);
   background-size: 100%;
@@ -465,6 +469,16 @@ body {
 #index main .container .main_img .main_text:nth-child(3) .main_word:nth-child(2) {
   color: rgba(33, 33, 33, 0.75);
 }
+#index main .container .main_img .scroll_icon .scroll_ball {
+  background: #212121;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+#index main .container .main_img .scroll_icon .scroll_ball.down {
+  transform: translateY(250%);
+  transition: 1s ease;
+  opacity: 0;
+}
 #index main .container .main_img_cover {
   display: block;
   width: 100%;
@@ -508,6 +522,18 @@ body {
   main .container .main_img .main_text:nth-child(3) .main_word:nth-child(2) {
     font-size: 1.25rem;
   }
+  main .container .main_img .scroll_icon {
+    width: 1.25rem;
+    height: 2.5rem;
+    border: 2px solid #424242;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    padding: 0.25rem;
+  }
+  main .container .main_img .scroll_icon .scroll_ball {
+    width: 100%;
+    height: 0.5rem;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   #index {
@@ -539,6 +565,18 @@ body {
   }
   main .main_text:nth-child(3) .main_word:nth-child(2) {
     font-size: 1rem;
+  }
+  main .scroll_icon {
+    width: 1rem;
+    height: 2rem;
+    border: 1px solid #424242;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    padding: 0.25rem;
+  }
+  main .scroll_icon .scroll_ball {
+    width: 100%;
+    height: 0.4rem;
   }
 }
 @media screen and (max-width: 767px) {
@@ -574,5 +612,17 @@ body {
   }
   main .main_img .main_text:nth-child(3) .main_word:nth-child(2) {
     font-size: 0.75rem;
+  }
+  main .main_img .scroll_icon {
+    width: 0.75rem;
+    height: 1.5rem;
+    border: 1px solid #424242;
+    border-radius: 1rem;
+    margin-top: 0.75rem;
+    padding: 0.2rem;
+  }
+  main .main_img .scroll_icon .scroll_ball {
+    width: 100%;
+    height: 0.25rem;
   }
 }/*# sourceMappingURL=main.css.map */

@@ -12,6 +12,6 @@ export default class Container {
       if (index !== this.index) element.remove();
     });
 
-    const main_img = new Main_Img(generator, data, data[17].array[0]);
+    const main_img = new Main_Img(generator, data, data[17].array[0], _class);
   }
 }
