@@ -194,7 +194,7 @@ export const Data = [
   {
     // container 17
     name: "container",
-    element: "section",
+    element: "div",
     type: ["class"],
     value: ["container"],
     text: [],
@@ -205,7 +205,7 @@ export const Data = [
   {
     // main_img 18
     name: "main_img",
-    element: "div",
+    element: "section",
     type: ["class", "alt"],
     value: ["main_img", "메인 이미지"],
     text: [],
@@ -264,6 +264,28 @@ export const Data = [
     type: ["class"],
     value: ["scroll_ball"],
     text: [],
+    number: 1,
+    array: [],
+  },
+
+  {
+    // color_system 24
+    name: "color_system",
+    element: "section",
+    type: ["class"],
+    value: ["color_system"],
+    text: [],
+    number: 1,
+    array: [],
+  },
+
+  {
+    // title 25
+    name: "title",
+    element: "h1",
+    type: ["class"],
+    value: ["title"],
+    text: ["Color System"],
     number: 1,
     array: [],
   },

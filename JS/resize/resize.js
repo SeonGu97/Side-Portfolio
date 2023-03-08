@@ -28,6 +28,9 @@ const resize = (data, _class, index) => {
         }
       }
     }, delay);
+
+    // const width = window.innerWidth;
+    // data[16].name.style.width = `${width}px`;
   });
 };
 

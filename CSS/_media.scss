@@ -1,20 +1,29 @@
-/* PC (해상도 1024px)*/
-@mixin desktop {
-  @media screen and (min-width: 1024px) {
+@mixin desktop1 {
+  @media screen and (min-width: 1200px) {
     @content;
   }
 }
 
-/* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/
+@mixin desktop2 {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
 @mixin tablet {
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
+  @media screen and (max-width: 1024px) {
     @content;
   }
 }
 
-/* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
 @mixin mobile {
   @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin mini {
+  @media screen and (max-width: 600px) {
     @content;
   }
 }

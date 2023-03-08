@@ -176,6 +176,8 @@ export default class Index {
         target.index == 3
           ? _class.add(data[14].name, "fix")
           : _class.remove(data[14].name, "fix");
+
+        target.index == 0 ? _class.remove(data[23].name, "down") : "";
       }
     });
 
