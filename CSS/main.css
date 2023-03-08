@@ -543,7 +543,7 @@ body {
   }
   main .container .scroll_icon .scroll_ball {
     width: 100%;
-    height: 0.65rem;
+    height: 0.625rem;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -590,7 +590,7 @@ body {
   }
   main .container .scroll_icon .scroll_ball {
     width: 100%;
-    height: 0.53rem;
+    height: 0.525rem;
   }
 }
 @media screen and (max-width: 767px) {
@@ -637,7 +637,7 @@ body {
   }
   main .container .scroll_icon .scroll_ball {
     width: 100%;
-    height: 0.45rem;
+    height: 0.425rem;
   }
 }
 @media screen and (max-width: 600px) {
