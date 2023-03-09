@@ -289,4 +289,39 @@ export const Data = [
     number: 1,
     array: [],
   },
+
+  {
+    // palette 26
+    name: "palette",
+    element: "div",
+    type: ["class"],
+    value: ["palette"],
+    text: [],
+    number: 2,
+    array: [],
+  },
+
+  {
+    // color 27
+    name: "color",
+    element: "div",
+    type: ["class"],
+    value: ["color"],
+    text: [],
+    number: 10,
+    array: [],
+  },
+
+  {
+    // sentence 28
+    name: "sentence",
+    element: "p",
+    type: ["class"],
+    value: ["sentence"],
+    text: [
+      "✨ 이 웹 사이트를 구성하는 주 색상들은 머터리얼 컬러로 사용이 되었습니다.",
+    ],
+    number: 1,
+    array: [],
+  },
 ];

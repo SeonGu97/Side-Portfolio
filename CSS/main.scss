@@ -373,100 +373,155 @@ body {
     height: 100%;
     flex-direction: column;
     align-items: center;
-    padding: 0.5rem;
+    padding: 0.5rem 0.5rem 0 0.5rem;
 
     .container {
-      @include full-size;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-y: scroll;
 
-      .main_img {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        background-image: url(../Img/main-img.jpg);
-        background-size: 100%;
-        background-repeat: no-repeat;
-        border-radius: 1.5rem;
-        font-weight: bold;
-        position: relative;
+      &:nth-child(1) {
+        .main_img {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          background-image: url(../Img/main-img.jpg);
+          background-size: 100%;
+          background-repeat: no-repeat;
+          border-radius: 1.5rem;
+          font-weight: bold;
+          position: relative;
 
-        .main_text {
-          .main_word {
-            transition: color 0.4s ease;
-          }
-
-          &:nth-child(1) {
+          .main_text {
             .main_word {
-              &:nth-child(1) {
-                &.dark-mode {
+              transition: color 0.4s ease;
+            }
+
+            &:nth-child(1) {
+              .main_word {
+                &:nth-child(1) {
+                  &.dark-mode {
+                    color: $color-10;
+                  }
+                }
+
+                &:nth-child(2) {
                   color: $color-10;
+
+                  &.dark-mode {
+                    color: $basic-text-color;
+                  }
                 }
               }
+            }
 
-              &:nth-child(2) {
-                color: $color-10;
+            &:nth-child(2) {
+              .main_word {
+                &:nth-child(1) {
+                  color: $color-10;
 
-                &.dark-mode {
-                  color: $basic-text-color;
+                  &.dark-mode {
+                    color: $basic-text-color;
+                  }
                 }
+
+                &:nth-child(2) {
+                  &.dark-mode {
+                    color: $color-10;
+                  }
+                }
+              }
+            }
+
+            &:nth-child(3) {
+              .main_word {
+                color: $basic-text-color;
+                opacity: 0.75;
               }
             }
           }
 
-          &:nth-child(2) {
-            .main_word {
-              &:nth-child(1) {
-                color: $color-10;
+          .main_img_cover {
+            @include full-size;
+            position: absolute;
+            top: 0;
+            left: 0;
 
-                &.dark-mode {
-                  color: $basic-text-color;
-                }
-              }
-
-              &:nth-child(2) {
-                &.dark-mode {
-                  color: $color-10;
-                }
-              }
-            }
-          }
-
-          &:nth-child(3) {
-            .main_word {
-              color: $basic-text-color;
-              opacity: 0.75;
+            &.dark-mode {
+              background: rgba($color: #000000, $alpha: 0.1);
             }
           }
         }
 
-        .main_img_cover {
-          @include full-size;
-          position: absolute;
-          top: 0;
-          left: 0;
+        .scroll_icon {
+          border-style: solid;
+          border-color: $color-2;
+          border-radius: 1rem;
 
-          &.dark-mode {
-            background: rgba($color: #000000, $alpha: 0.1);
+          .scroll_ball {
+            background: $color-1;
+            border-radius: 50%;
+            opacity: 1;
+
+            &.down {
+              transform: translateY(200%);
+              transition: 1s ease;
+              opacity: 0;
+            }
+          }
+        }
+
+        .color_system {
+          display: flex;
+          max-width: 1200px;
+          width: 100%;
+          flex-direction: column;
+
+          .title {
+            display: inline-block;
+            width: min-content;
+            font-weight: bold;
+          }
+
+          .palette {
+            display: flex;
+            width: 100%;
+            border-width: 2px;
+            border-style: solid;
+            border-radius: 0.25rem;
+            border-color: $color-4;
+            background: rgba($color: #000000, $alpha: 0.05);
+
+            &:nth-child(1) {
+              margin-top: 2rem;
+            }
+
+            .color {
+              width: 10%;
+              cursor: pointer;
+
+              &:hover {
+                transform: scale(1.1);
+              }
+            }
+
+            &.dark-mode {
+              background: rgba($color: #ffffff, $alpha: 0.05);
+              border-color: $color-3;
+            }
+          }
+
+          .sentence {
+            white-space: normal;
+            line-height: 1.5rem;
           }
         }
       }
 
-      .scroll_icon {
-        border-style: solid;
-        border-color: $color-2;
-        border-radius: 1rem;
-
-        .scroll_ball {
-          background: $color-1;
-          border-radius: 50%;
-          opacity: 1;
-
-          &.down {
-            transform: translateY(200%);
-            transition: 0.4s ease;
-            opacity: 0;
-          }
-        }
+      &::-webkit-scrollbar {
+        display: none;
       }
     }
   }
@@ -481,6 +536,9 @@ body {
     width: calc(100% - 5rem);
 
     .container {
+      @include full-size;
+      gap: 7.5rem;
+
       .main_img {
         width: 100%;
         height: 35rem;
@@ -511,17 +569,38 @@ body {
             }
           }
         }
+
+        .scroll_icon {
+          width: 1.5rem;
+          height: 3rem;
+          padding: 0.25rem;
+          border-width: 2px;
+
+          .scroll_ball {
+            width: 100%;
+            height: 0.75rem;
+          }
+        }
       }
 
-      .scroll_icon {
-        width: 1.5rem;
-        height: 3rem;
-        padding: 0.25rem;
-        border-width: 2px;
+      .color_system {
+        gap: 2.5rem;
+        padding: 0 3.5rem;
 
-        .scroll_ball {
-          width: 100%;
-          height: 0.75rem;
+        .title {
+          font-size: 3.5rem;
+        }
+
+        .palette {
+          padding: 2.5rem;
+
+          .color {
+            height: 6.5rem;
+          }
+        }
+
+        .sentence {
+          margin-top: 1.5rem;
         }
       }
     }
@@ -537,6 +616,9 @@ body {
     width: calc(100% - 5rem);
 
     .container {
+      @include full-size;
+      gap: 7.5rem;
+
       .main_img {
         width: 100%;
         height: 30rem;
@@ -567,17 +649,38 @@ body {
             }
           }
         }
+
+        .scroll_icon {
+          width: 1.375rem;
+          height: 2.65rem;
+          padding: 0.25rem;
+          border-width: 2px;
+
+          .scroll_ball {
+            width: 100%;
+            height: 0.625rem;
+          }
+        }
       }
 
-      .scroll_icon {
-        width: 1.375rem;
-        height: 2.65rem;
-        padding: 0.25rem;
-        border-width: 2px;
+      .color_system {
+        gap: 2.25rem;
+        padding: 0 3.5rem;
 
-        .scroll_ball {
-          width: 100%;
-          height: 0.625rem;
+        .title {
+          font-size: 3rem;
+        }
+
+        .palette {
+          padding: 2rem;
+
+          .color {
+            height: 5.5rem;
+          }
+        }
+
+        .sentence {
+          margin-top: 1.5rem;
         }
       }
     }
@@ -607,6 +710,10 @@ body {
     width: 100%;
 
     .container {
+      width: 100%;
+      height: calc(100% - 3.5rem);
+      gap: 5.5rem;
+
       .main_img {
         width: 100%;
         height: 26.5rem;
@@ -637,17 +744,34 @@ body {
             }
           }
         }
+
+        .scroll_icon {
+          width: 1.15rem;
+          height: 2.25rem;
+          padding: 0.25rem;
+          border-width: 1px;
+
+          .scroll_ball {
+            width: 100%;
+            height: 0.525rem;
+          }
+        }
       }
 
-      .scroll_icon {
-        width: 1.15rem;
-        height: 2.25rem;
-        padding: 0.25rem;
-        border-width: 1px;
+      .color_system {
+        gap: 2rem;
+        padding: 0 2.5rem;
 
-        .scroll_ball {
-          width: 100%;
-          height: 0.525rem;
+        .title {
+          font-size: 2.5rem;
+        }
+
+        .palette {
+          padding: 1.5rem;
+
+          .color {
+            height: 5.5rem;
+          }
         }
       }
     }
@@ -707,17 +831,38 @@ body {
             }
           }
         }
+
+        .scroll_icon {
+          width: 0.9rem;
+          height: 1.75rem;
+          padding: 0.175rem;
+          border-width: 1px;
+
+          .scroll_ball {
+            width: 100%;
+            height: 0.425rem;
+          }
+        }
       }
 
-      .scroll_icon {
-        width: 0.9rem;
-        height: 1.75rem;
-        padding: 0.175rem;
-        border-width: 1px;
+      .color_system {
+        padding: 0 1.5rem;
 
-        .scroll_ball {
-          width: 100%;
-          height: 0.425rem;
+        .title {
+          font-size: 2.5rem;
+        }
+
+        .palette {
+          padding: 1.5rem;
+
+          .color {
+            height: 4.5rem;
+          }
+        }
+
+        .sentence {
+          margin-top: 1rem;
+          font-size: 0.9rem;
         }
       }
     }
@@ -747,6 +892,8 @@ body {
     width: 100%;
 
     .container {
+      gap: 4rem;
+
       .main_img {
         width: 100%;
         height: 13.5rem;
@@ -777,17 +924,39 @@ body {
             }
           }
         }
+
+        .scroll_icon {
+          width: 0.75rem;
+          height: 1.5rem;
+          padding: 0.125rem;
+          border-width: 1px;
+
+          .scroll_ball {
+            width: 100%;
+            height: 0.375rem;
+          }
+        }
       }
 
-      .scroll_icon {
-        width: 0.75rem;
-        height: 1.5rem;
-        padding: 0.125rem;
-        border-width: 1px;
+      .color_system {
+        gap: 1.5rem;
+        padding: 0 0.5rem;
 
-        .scroll_ball {
-          width: 100%;
-          height: 0.375rem;
+        .title {
+          font-size: 2.25rem;
+        }
+
+        .palette {
+          padding: 1.25rem;
+
+          .color {
+            height: 3.5rem;
+          }
+        }
+
+        .sentence {
+          margin-top: 0.5rem;
+          font-size: 0.75rem;
         }
       }
     }

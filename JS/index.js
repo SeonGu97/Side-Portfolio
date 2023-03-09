@@ -118,7 +118,7 @@ export default class Index {
             _class.remove_all(data[17].array, "up");
             setTimeout(() => {
               _class.add(data[17].array[target.index], "up");
-            }, 100);
+            }, 500);
           });
 
           this.Index.shift();
@@ -140,6 +140,10 @@ export default class Index {
     data[2].array.forEach((element, index, array) => {
       element.addEventListener("click", (e) => {
         const target = e.target;
+
+        if (target.classList[0] == "item") {
+          target.index == 0 ? _class.remove(data[23].name, "down") : "";
+        }
 
         if (target.classList[0] == "mode") {
           array.forEach((element) => {
@@ -176,8 +180,6 @@ export default class Index {
         target.index == 3
           ? _class.add(data[14].name, "fix")
           : _class.remove(data[14].name, "fix");
-
-        target.index == 0 ? _class.remove(data[23].name, "down") : "";
       }
     });
 
@@ -194,6 +196,7 @@ export default class Index {
         }
         _class.toggle_all(data[20].array, "dark-mode");
         _class.toggle(data[21].name, "dark-mode");
+        _class.toggle_all(data[26].array, "dark-mode");
       }
     });
 
@@ -231,6 +234,7 @@ export default class Index {
       _class.add_all(data[14].array, "dark-mode");
       _class.add_all(data[20].array, "dark-mode");
       _class.add(data[21].name, "dark-mode");
+      _class.add_all(data[26].array, "dark-mode");
     }
 
     if (this.Index == 3) {

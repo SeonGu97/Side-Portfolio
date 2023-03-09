@@ -6,7 +6,7 @@ export default class Scroll_Ball {
 
     setInterval(() => {
       _class.add(data[23].name, "down");
-    }, 2000);
+    }, 2500);
 
     data[23].name.addEventListener("transitionend", (e) => {
       _class.remove(data[23].name, "down");
