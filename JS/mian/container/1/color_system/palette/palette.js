@@ -39,7 +39,7 @@ export default class Palette {
       element.addEventListener("click", (e) => {
         const target = e.target;
         const delay = 300;
-        const text = "📌 클립보드에 복사되었습니다 📌";
+        const text = "💡 색상이 클립보드에 복사 되었습니다.";
 
         this.timer(delay, color[target.index], text);
       });
