@@ -486,10 +486,10 @@ body {
 #index main .container:nth-child(1) .color_system .palette {
   display: flex;
   width: 100%;
-  border-width: 2px;
+  border-width: 1px;
   border-style: solid;
   border-radius: 0.25rem;
-  border-color: #757575;
+  border-color: #9e9e9e;
   background: rgba(0, 0, 0, 0.05);
 }
 #index main .container:nth-child(1) .color_system .palette:nth-child(1) {
@@ -503,7 +503,7 @@ body {
   transform: scale(1.1);
 }
 #index main .container:nth-child(1) .color_system .palette.dark-mode {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.075);
   border-color: #616161;
 }
 #index main .container:nth-child(1) .color_system .sentence {
